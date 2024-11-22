@@ -14,6 +14,24 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    likedSongs: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Song",
+        required: false,
+        default: ""
+    }],
+    likedPlaylists: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Playlist",
+        required: false,
+        default: ""
+    }],
+    subscribedArtists: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: false,
+        default: ""
+    }]
 }, { timestamps: true });
 
 export const User = mongoose.model("User", userSchema);

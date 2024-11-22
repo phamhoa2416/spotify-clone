@@ -1,12 +1,13 @@
 import mongoose  from "mongoose";
 
-const albumSchema = new mongoose.Schema({
+const playlistSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
     },
     artist: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true,
     },
     imageUrl: {
@@ -24,4 +25,4 @@ const albumSchema = new mongoose.Schema({
     }]
 }, { timestamps: true });
 
-export const Album = mongoose.model("Album", albumSchema);
+export const Playlist = mongoose.model("Playlist", playlistSchema);
