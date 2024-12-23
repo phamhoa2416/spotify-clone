@@ -8,9 +8,9 @@ import cors from "cors";
 import { connectDB } from "./lib/database.js";
 import authRoutes from "./routes/auth.route.js";
 import adminRoutes from "./routes/admin.route.js";
-import playlistRoutes from "./routes/playlist.route.js";
 import songRoutes from "./routes/song.route.js";
 import userRoutes from "./routes/user.route.js";
+import albumRoutes from "./routes/album.route.js";
 
 dotenv.config();
 
@@ -43,7 +43,7 @@ app.use((err, req, res, next) => {
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/playlists", playlistRoutes);
+app.use("/api/albums", albumRoutes);
 app.use("/api/songs", songRoutes);
 app.use("/api/users", userRoutes);
 
